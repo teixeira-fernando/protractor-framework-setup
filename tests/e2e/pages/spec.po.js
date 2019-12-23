@@ -1,4 +1,8 @@
 'use strict';
+const {
+  setDefaultTimeout
+} = require('cucumber');
+setDefaultTimeout(60 * 1200);
 
 let nameInput,
   greeting;

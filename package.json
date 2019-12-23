@@ -6,16 +6,12 @@
   "scripts": {
     "test": "protractor protractor.conf.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tuliobluz/protractor-cucumber-pageobject.git"
-  },
   "keywords": [
     "protractor",
     "cucumber",
     "pageobject"
   ],
-  "author": "Tulio Bandeira Luz",
+  "author": "Fernando Teixeira",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tuliobluz/protractor-cucumber-pageobject/issues"

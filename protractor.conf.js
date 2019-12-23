@@ -3,18 +3,21 @@ Basic configuration to run your cucumber
 feature files and step definitions with protractor.
 **/
 exports.config = {
-  capabilities: {
-
-   //ignoreSynchronization: true,
-
-    browserName: 'chrome',
-    /**
-     * If this is set to be true, specs will be sharded by file (i.e. all
-     * files to be run by this set of capabilities will run in parallel).
-     * Default is false.
-     */
-    shardTestFiles: true
-  },
+  multiCapabilities: [
+    {
+      'browserName': 'firefox',
+      'moz:firefoxOptions': {
+        args: ["--headless"]
+      }
+    }, 
+    {
+      'browserName': 'chrome',
+      chromeOptions: {
+        args: ["--headless", "--disable-gpu"]
+      }
+    }
+  ],
+  seleniumAddress: 'http://localhost:4444/wd/hub',
   /**
    * The timeout in milliseconds for each script run on the browser. This
    * should be longer than the maximum time your application needs to
@@ -92,9 +95,15 @@ exports.config = {
    */
   onPrepare: function () {
     const {Given, Then, When, Before} = require('cucumber');
+    let chai = require('chai');
+    let chaiAsPromised = require('chai-as-promised');
+    chai.use(chaiAsPromised);
     global.Given = Given;
     global.When = When;
     global.Then = Then;
     global.Before = Before;
+    global.expect = chai.expect;
+    
   }
+
 };
