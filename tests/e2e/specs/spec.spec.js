@@ -14,5 +14,5 @@ When('The user adds {string} in the name field', function (string) {
 
 Then('The user should see Hello with the username', function () {
     expect(specPage.getGreetingText())
-        .to.eventually.equal('Hello Tulio!')
+        .to.eventually.equal('Hello Fernando!')
 });
