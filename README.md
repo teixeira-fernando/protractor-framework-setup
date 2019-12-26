@@ -15,3 +15,6 @@
 - Start the Selenium Server ```webdriver-manage start```
 
 - Run the tests ```protractor protractor.conf.js```
+
+
+Credits for Tulio for creating the reference repository: https://github.com/tuliobluz/protractor-cucumber-pageobject
