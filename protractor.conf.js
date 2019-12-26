@@ -1,17 +1,15 @@
-/*
-Basic configuration to run your cucumber
-feature files and step definitions with protractor.
-**/
 exports.config = {
   multiCapabilities: [
     {
-      'browserName': 'firefox',
+      browserName: 'firefox',
+        maxInstances: 5,
       'moz:firefoxOptions': {
         args: ["--headless"]
       }
     }, 
     {
-      'browserName': 'chrome',
+      browserName: 'chrome',
+        maxInstances: 5,
       chromeOptions: {
         args: ["--headless"]
       }
@@ -64,7 +62,20 @@ exports.config = {
     strict: true,                  // <boolean> fail if there are any undefined or pending steps
     'dry-run': false,              // <boolean> invoke formatters without executing steps
     compiler: [],                   // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
+      // Tell CucumberJS to save the JSON report
+      format: 'json:./reports/results.json'
   },
+    plugins: [{
+        package: 'protractor-multiple-cucumber-html-reporter-plugin',
+        options:{
+            automaticallyGenerateReport: true,
+            removeExistingJsonReportFile: true,
+            displayDuration: true,
+            durationInMS: true,
+            pageTitle: "Protractor Setup - Fernando Teixeira"
+        }
+    }],
+
    /**
    * A callback function called once protractor is ready and available, and
    * before the specs are executed. If multiple capabilities are being run,
@@ -103,7 +114,6 @@ exports.config = {
     global.Then = Then;
     global.Before = Before;
     global.expect = chai.expect;
-    
   }
 
 };

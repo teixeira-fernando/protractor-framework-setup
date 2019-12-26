@@ -5,6 +5,7 @@ package-lock.json
 # e2e
 /e2e/*.js
 /e2e/*.map
+reports
 
 # System Files
 .DS_Store

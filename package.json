@@ -6,7 +6,7 @@
   "scripts": {
     "test": "docker-compose up -d && protractor protractor.conf.js",
     "test:noDocker": "protractor protractor.conf.js",
-    "docker:up:grid":"docker-compose up -d",
+    "docker:up:grid": "docker-compose up -d",
     "docker:down:grid": "docker-compose down",
     "zalenium:setup": "docker run -dit --rm -ti --name zalenium -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/home/seluser/videos --privileged dosel/zalenium start --maxTestSessions 6 --videoRecordingEnabled false"
   },
@@ -28,6 +28,7 @@
     "protractor": "5.3.2"
   },
   "devDependencies": {
-    "protractor-cucumber-framework": "^5.0.0"
+    "protractor-cucumber-framework": "^5.0.0",
+    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1"
   }
 }

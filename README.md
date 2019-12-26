@@ -16,5 +16,8 @@
 
 - Run the tests ```protractor protractor.conf.js```
 
+###Information
+
+- I have added Cucumber HTML Reporter: https://www.npmjs.com/package/protractor-multiple-cucumber-html-reporter-plugin
 
 __Credits for Tulio for creating the reference repository: https://github.com/tuliobluz/protractor-cucumber-pageobject__
